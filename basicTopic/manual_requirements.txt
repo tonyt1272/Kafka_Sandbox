@@ -1,0 +1,5 @@
+pip install kafka-python
+pip install "fastapi[all]"
+pip install python-dotenv
+pip freeze -> requirements.txt
+

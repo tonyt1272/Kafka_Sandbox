@@ -7,3 +7,11 @@ pip freeze -> requirements.txt
 # console consumer for testing
 # docker exec -it cli-tools kafka-console-consumer --bootstrap-server broker0:29092 --topic people.basic.python
 
+# describe topics
+# docker exec -it cli-tools kafka-topics --bootstrap-server broker0:29092 --describe --topic people.basic.python
+
+# list topics
+# docker exec -it cli-tools kafka-topics --bootstrap-server broker0:29092 --list
+
+# delete topics
+# docker exec -it cli-tools kafka-topics --bootstrap-server broker0:29092 --topic people.basic.python --delete

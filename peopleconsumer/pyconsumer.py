@@ -20,7 +20,7 @@ def people_value_deserializer(value):
 def main():
     logger.info(f"""
         Started Python Consumer
-        for topic {os.environ['TOPICS_PEOPLE_ADV_NAME']}
+        for topic {os.environ['TOPICS_DATA']}
     """)
 
     consumer = KafkaConsumer(bootstrap_servers=os.environ['BOOTSTRAP_SERVERS'],
@@ -29,10 +29,10 @@ def main():
                              value_deserializer=people_value_deserializer,
                              enable_auto_commit=False)
 
-    consumer.subscribe([os.environ['TOPICS_PEOPLE_ADV_NAME']])
+    consumer.subscribe([os.environ['TOPICS_DATA']])
     for record in consumer:
         logger.info(f"""
-                    Consumed person {record.value}
+                    Consumed data {record.value}
                     with key '{record.key}'
                     from partition {record.partition}
                     at offset {record.offset}
